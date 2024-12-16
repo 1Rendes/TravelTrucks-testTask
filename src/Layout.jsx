@@ -1,10 +1,10 @@
 import { Suspense } from "react";
-import AppBar from "./components/AppBar/AppBar";
+import Navigation from "./components/Navigation/Navigation";
 
 export const Layout = ({ children }) => {
   return (
     <div>
-      <AppBar />
+      <Navigation />
       <Suspense fallback={null}>{children}</Suspense>
     </div>
   );
