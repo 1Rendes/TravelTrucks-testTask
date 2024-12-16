@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Navigation from "./components/Navigation/Navigation";
+import { Navigation } from "./components/Navigation/Navigation.jsx";
 
 export const Layout = ({ children }) => {
   return (
