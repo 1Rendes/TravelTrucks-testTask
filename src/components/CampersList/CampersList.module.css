@@ -1,0 +1,12 @@
+.campersList {
+  display: block;
+}
+.listItem {
+  display: flex;
+  gap: 24px;
+  width: 888px;
+  height: 368px;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--light-grey);
+}

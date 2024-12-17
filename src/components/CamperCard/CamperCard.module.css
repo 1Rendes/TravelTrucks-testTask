@@ -1,0 +1,8 @@
+.header {
+  display: flex;
+}
+.image {
+  border-radius: 10px;
+  width: 292px;
+  object-fit: cover;
+}

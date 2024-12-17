@@ -1,2 +1,2 @@
-export const campers = (state) => state.campers.campers.items;
-export const numberOfCampers = (state) => state.campers.campers.total;
+export const selectCampers = (state) => state.campers.campers.items;
+export const selectNumberOfCampers = (state) => state.campers.campers.total;

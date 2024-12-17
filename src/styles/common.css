@@ -29,6 +29,8 @@ body {
 }
 
 .button {
+  display: flex;
+  width: fit-content;
   background-color: var(--red);
   transition: background-color 250ms ease-in-out;
   border-radius: 28px;
