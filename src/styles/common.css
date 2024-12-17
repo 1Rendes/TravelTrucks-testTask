@@ -1,0 +1,40 @@
+@import url(./reset.css);
+
+:root {
+  --black: #101828;
+  --dark-grey: #475467;
+  --grey: #6c717b;
+  --red: #e44848;
+  --red-hover: #d84343;
+  --yellow: #ffc531;
+  --light-grey: #dadde1;
+  --grey-icons: #f2f4f7;
+  --grey-forms: #f7f7f7;
+  --white: #fff;
+  --font-family: "Inter", sans-serif;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  background-color: var(--main-white);
+  color: var(--main-text);
+}
+
+.button {
+  background-color: var(--red);
+  transition: background-color 250ms ease-in-out;
+  border-radius: 28px;
+  color: var(--white);
+  padding: 16px 48px;
+}
+.button:hover {
+  background-color: var(--red-hover);
+}

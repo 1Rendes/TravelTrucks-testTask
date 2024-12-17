@@ -1,0 +1,18 @@
+.home {
+  background-image: url(../../img/hero.png);
+  padding: 260px 0 260px 64px;
+}
+.mainHeader {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 32px;
+  color: var(--grey-forms);
+}
+.subHeader {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  color: var(--grey-forms);
+  margin-bottom: 40px;
+}
