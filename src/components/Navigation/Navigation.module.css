@@ -6,6 +6,13 @@
 .menuButton {
   height: 72px;
   align-content: center;
+  color: var(--black);
+}
+.menuButton:hover {
+  text-decoration: underline;
+}
+.isActive {
+  color: var(--red-hover);
 }
 .navigation {
   position: relative;

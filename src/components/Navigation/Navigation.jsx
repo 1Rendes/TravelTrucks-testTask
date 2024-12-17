@@ -1,8 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import css from "./Navigation.module.css";
 import logo from "../../img/icons.svg";
+import clsx from "clsx";
 
 export const Navigation = () => {
+  const buildLinkClass = ({ isActive }) => {
+    return clsx(css.menuButton, isActive && css.isActive);
+  };
+
   return (
     <div className={css.navigation}>
       <Link to="/">
@@ -11,10 +16,10 @@ export const Navigation = () => {
         </svg>
       </Link>
       <div className={css.menu}>
-        <NavLink className={css.menuButton} to="/">
+        <NavLink className={buildLinkClass} to="/">
           HomePage
         </NavLink>
-        <NavLink className={css.menuButton} to="/catalog">
+        <NavLink className={buildLinkClass} to="/catalog">
           Catalog
         </NavLink>
       </div>
