@@ -27,7 +27,7 @@ const CamperCard = ({ camperData }) => {
         <div className={css.header}>
           <h3 className={css.name}>{name}</h3>
           <div className={css.groupPriceAndFavorite}>
-            <h3 className={css.price}>{price}</h3>
+            <h3 className={css.price}>€{price}.00</h3>
             <svg width={26} height={24}>
               <use href={`${icons}#icon-favorite`}></use>
             </svg>
