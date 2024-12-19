@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import LocationInput from "../LocationInput/LocationInput";
 import VehicleEquipmentFilter from "../VehicleEquipmentFilter/VehicleEquipmentFilter";
 import VehicleTypeFilter from "../VehicleTypeFilter/VehicleTypeFilter";
-import { setFilters } from "../../redux/campers/slice";
+import { setFilters } from "../../redux/filters/slice";
 
 const Filters = () => {
   const dispatch = useDispatch();
