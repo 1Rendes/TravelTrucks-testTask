@@ -1,8 +1,9 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import LocationInput from "../LocationInput/LocationInput";
 import VehicleEquipmentFilter from "../VehicleEquipmentFilter/VehicleEquipmentFilter";
 import VehicleTypeFilter from "../VehicleTypeFilter/VehicleTypeFilter";
 import { setFilters } from "../../redux/filters/slice";
+import { selectFilters } from "../../redux/filters/selectors";
 
 const Filters = () => {
   const dispatch = useDispatch();
@@ -20,11 +21,27 @@ const Filters = () => {
       formData.form = formElements.VehicleTypeFilter.value;
     dispatch(setFilters(formData));
   };
+  const filters = useSelector(selectFilters);
+  const vehicleTypeFilterState = {
+    panelTruck: false,
+    integrated: false,
+    alcove: false,
+  };
+  vehicleTypeFilterState[filters.form] = true;
   return (
     <form onSubmit={handleSubmit}>
-      <LocationInput />
-      <VehicleEquipmentFilter />
-      <VehicleTypeFilter />
+      <LocationInput state={filters.location} />
+      <VehicleEquipmentFilter
+        inputName={"equipmentFilter"}
+        type={"checkbox"}
+        filters={filters}
+      />
+      <VehicleTypeFilter
+        inputName={"VehicleTypeFilter"}
+        type={"radio"}
+        filters={filters}
+        filtersDefaultValue={vehicleTypeFilterState}
+      />
       <button className="button" type="submit">
         Search
       </button>

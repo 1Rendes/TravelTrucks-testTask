@@ -1,25 +1,29 @@
 import FilterComponent from "../FilterComponent/FilterComponent";
 import css from "../VehicleEquipmentFilter/VehicleEquipmentFilter.module.css";
 
-const VehicleTypeFilter = () => {
+const VehicleTypeFilter = ({ inputName, type, filtersDefaultValue }) => {
+  const { panelTruck, integrated, alcove } = filtersDefaultValue;
   return (
     <div>
       <h3 className={css.filterName}>Vehicle type</h3>
       <div className={css.groupFilter}>
         <FilterComponent
-          filterName="panelTruck"
-          type={"radio"}
-          inputName="VehicleTypeFilter"
+          filterValue="panelTruck"
+          type={type}
+          inputName={inputName}
+          defaultValue={panelTruck}
         />
         <FilterComponent
-          filterName="integrated"
-          type={"radio"}
-          inputName="VehicleTypeFilter"
+          filterValue="integrated"
+          type={type}
+          inputName={inputName}
+          defaultValue={integrated}
         />
         <FilterComponent
-          filterName="alcove"
-          type={"radio"}
-          inputName="VehicleTypeFilter"
+          filterValue="alcove"
+          type={type}
+          inputName={inputName}
+          defaultValue={alcove}
         />
       </div>
     </div>

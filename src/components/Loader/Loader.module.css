@@ -1,0 +1,7 @@
+.centredWrapper {
+  height: 100vh;
+  width: 888px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

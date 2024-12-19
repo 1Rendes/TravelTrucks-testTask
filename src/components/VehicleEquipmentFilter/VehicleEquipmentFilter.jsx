@@ -1,36 +1,42 @@
 import FilterComponent from "../FilterComponent/FilterComponent";
 import css from "./VehicleEquipmentFilter.module.css";
 
-const VehicleEquipmentFilter = () => {
+const VehicleEquipmentFilter = ({ filters, type, inputName }) => {
+  const { AC, TV, bathroom, transmission, kitchen } = filters;
   return (
     <div>
       <p className={css.filters}>Filters</p>
       <h3 className={css.filterName}>Vehicle equipment</h3>
       <div className={css.groupFilter}>
         <FilterComponent
-          inputName={"equipmentFilter"}
-          filterName={"AC"}
-          type={"checkbox"}
+          defaultValue={AC}
+          inputName={inputName}
+          filterValue={"AC"}
+          type={type}
         />
         <FilterComponent
-          inputName={"equipmentFilter"}
-          filterName={"automatic"}
-          type={"checkbox"}
+          inputName={inputName}
+          filterValue={"automatic"}
+          type={type}
+          defaultValue={transmission}
         />
         <FilterComponent
-          inputName={"equipmentFilter"}
-          filterName={"kitchen"}
-          type={"checkbox"}
+          inputName={inputName}
+          filterValue={"kitchen"}
+          type={type}
+          defaultValue={kitchen}
         />
         <FilterComponent
-          inputName={"equipmentFilter"}
-          filterName={"TV"}
-          type={"checkbox"}
+          inputName={inputName}
+          filterValue={"TV"}
+          type={type}
+          defaultValue={TV}
         />
         <FilterComponent
-          inputName={"equipmentFilter"}
-          filterName={"bathroom"}
-          type={"checkbox"}
+          defaultValue={bathroom}
+          inputName={inputName}
+          filterValue={"bathroom"}
+          type={type}
         />
       </div>
     </div>

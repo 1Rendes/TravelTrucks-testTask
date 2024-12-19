@@ -1,1 +1,1 @@
-export const selectFilters = (state) => state.campers.filters;
+export const selectFilters = (state) => state.filters.filters;
