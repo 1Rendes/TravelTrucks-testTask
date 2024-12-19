@@ -20,6 +20,7 @@ const CamperCard = ({ camperData, handleSetFavorite, favoriteCampers }) => {
     TV,
     bathroom,
   } = camperData;
+  const isFavorite = favoriteCampers.includes(id);
   return (
     <>
       <img className={css.image} src={gallery[0].thumb} alt="Truck photo" />
@@ -35,7 +36,7 @@ const CamperCard = ({ camperData, handleSetFavorite, favoriteCampers }) => {
               }}
             >
               <svg
-                className={favoriteCampers.includes(id) && css.isFavorite}
+                className={isFavorite ? css.isFavorite : ""}
                 width={26}
                 height={24}
               >
