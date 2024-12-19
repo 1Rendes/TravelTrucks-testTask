@@ -58,7 +58,7 @@ const CamperCard = ({ camperData }) => {
           {AC && <EquipmentItem str={"AC"} />}
           {kitchen && <EquipmentItem str={"kitchen"} />}
           {TV && <EquipmentItem str={"TV"} />}
-          {bathroom && <EquipmentItem str={"shower"} />}
+          {bathroom && <EquipmentItem str={"bathroom"} />}
         </ul>
         <Link className="button" to={`/catalog/${id}`}>
           Show more

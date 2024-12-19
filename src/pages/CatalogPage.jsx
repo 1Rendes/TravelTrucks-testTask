@@ -1,16 +1,19 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllCampers } from "../redux/campers/operations";
 import Container from "../components/Container/Container";
 import Filters from "../components/Filters/Filters";
 import CampersList from "../components/CampersList/CampersList";
+import { selectFilters } from "../redux/campers/selectors";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
+  const filters = useSelector(selectFilters);
+  console.log(filters);
 
   useEffect(() => {
-    dispatch(getAllCampers());
-  }, [dispatch]);
+    dispatch(getAllCampers(filters));
+  }, [dispatch, filters]);
 
   return (
     <Container>

@@ -30,6 +30,8 @@ body {
 
 .button {
   line-height: 24px;
+  font-size: 16px;
+  font-weight: 500;
   display: flex;
   width: fit-content;
   background-color: var(--red);
