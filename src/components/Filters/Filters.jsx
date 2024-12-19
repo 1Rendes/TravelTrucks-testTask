@@ -22,25 +22,24 @@ const Filters = () => {
     dispatch(setFilters(formData));
   };
   const filters = useSelector(selectFilters);
-  const vehicleTypeFilterState = {
+  const defaultVehicleTypeFilterState = {
     panelTruck: false,
     integrated: false,
     alcove: false,
   };
-  vehicleTypeFilterState[filters.form] = true;
+  defaultVehicleTypeFilterState[filters.form] = true;
   return (
     <form onSubmit={handleSubmit}>
       <LocationInput state={filters.location} />
       <VehicleEquipmentFilter
         inputName={"equipmentFilter"}
         type={"checkbox"}
-        filters={filters}
+        filtersDefaultValue={filters}
       />
       <VehicleTypeFilter
         inputName={"VehicleTypeFilter"}
         type={"radio"}
-        filters={filters}
-        filtersDefaultValue={vehicleTypeFilterState}
+        filtersDefaultValue={defaultVehicleTypeFilterState}
       />
       <button className="button" type="submit">
         Search

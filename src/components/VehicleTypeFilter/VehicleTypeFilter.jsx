@@ -2,29 +2,25 @@ import FilterComponent from "../FilterComponent/FilterComponent";
 import css from "../VehicleEquipmentFilter/VehicleEquipmentFilter.module.css";
 
 const VehicleTypeFilter = ({ inputName, type, filtersDefaultValue }) => {
-  const { panelTruck, integrated, alcove } = filtersDefaultValue;
+  const filterData = [
+    { key: "panelTruck", defaultValue: filtersDefaultValue.panelTruck },
+    { key: "integrated", defaultValue: filtersDefaultValue.integrated },
+    { key: "alcove", defaultValue: filtersDefaultValue.alcove },
+  ];
+
   return (
     <div>
       <h3 className={css.filterName}>Vehicle type</h3>
       <div className={css.groupFilter}>
-        <FilterComponent
-          filterValue="panelTruck"
-          type={type}
-          inputName={inputName}
-          defaultValue={panelTruck}
-        />
-        <FilterComponent
-          filterValue="integrated"
-          type={type}
-          inputName={inputName}
-          defaultValue={integrated}
-        />
-        <FilterComponent
-          filterValue="alcove"
-          type={type}
-          inputName={inputName}
-          defaultValue={alcove}
-        />
+        {filterData.map(({ key, defaultValue }) => (
+          <FilterComponent
+            key={key}
+            filterValue={key}
+            type={type}
+            inputName={inputName}
+            defaultValue={defaultValue}
+          />
+        ))}
       </div>
     </div>
   );
