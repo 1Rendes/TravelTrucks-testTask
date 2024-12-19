@@ -66,3 +66,11 @@
   gap: 8px;
   margin-bottom: 24px;
 }
+.isFavorite {
+  fill: var(--red);
+}
+.favoriteButton {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}

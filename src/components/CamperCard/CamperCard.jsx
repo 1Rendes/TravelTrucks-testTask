@@ -3,7 +3,7 @@ import icons from "../../img/icons.svg";
 import css from "./CamperCard.module.css";
 import EquipmentItem from "../EquipmentItem/EquipmentItem";
 
-const CamperCard = ({ camperData }) => {
+const CamperCard = ({ camperData, handleSetFavorite, favoriteCampers }) => {
   const {
     gallery,
     name,
@@ -28,9 +28,20 @@ const CamperCard = ({ camperData }) => {
           <h3 className={css.name}>{name}</h3>
           <div className={css.groupPriceAndFavorite}>
             <h3 className={css.price}>€{price}.00</h3>
-            <svg width={26} height={24}>
-              <use href={`${icons}#icon-favorite`}></use>
-            </svg>
+            <button
+              className={css.favoriteButton}
+              onClick={() => {
+                handleSetFavorite(id);
+              }}
+            >
+              <svg
+                className={favoriteCampers.includes(id) && css.isFavorite}
+                width={26}
+                height={24}
+              >
+                <use href={`${icons}#icon-favorite`}></use>
+              </svg>
+            </button>
           </div>
         </div>
         <div className={css.groupRatingAndLocation}>
