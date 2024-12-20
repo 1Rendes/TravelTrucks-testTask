@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllCampers } from "./operations";
+import { getAllCampers, getCamperById } from "./operations";
 import toast from "react-hot-toast";
 
 const INITIAL_STATE = {
@@ -7,8 +7,10 @@ const INITIAL_STATE = {
     items: [],
     total: 0,
   },
+  choosenCamper: {},
   favoriteCampers: [],
   isLoading: false,
+  loaded: false,
 };
 
 const campersSlice = createSlice({
@@ -38,6 +40,18 @@ const campersSlice = createSlice({
       })
       .addCase(getAllCampers.rejected, (state) => {
         toast.error("We have no results for this request.");
+        state.isLoading = false;
+      })
+      .addCase(getCamperById.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getCamperById.fulfilled, (state, { payload }) => {
+        state.choosenCamper = payload;
+        state.isLoading = false;
+        state.loaded = true;
+      })
+      .addCase(getCamperById.rejected, (state) => {
+        toast.error("Unable to load data");
         state.isLoading = false;
       });
   },

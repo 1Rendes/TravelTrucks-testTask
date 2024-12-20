@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import icons from "../../img/icons.svg";
 import css from "./CamperCard.module.css";
 import EquipmentItem from "../EquipmentItem/EquipmentItem";
+import RatingAndLocation from "../RatingAndLocation/RatingAndLocation";
 
 const CamperCard = ({ camperData, handleSetFavorite, favoriteCampers }) => {
   const {
@@ -45,24 +46,11 @@ const CamperCard = ({ camperData, handleSetFavorite, favoriteCampers }) => {
             </button>
           </div>
         </div>
-        <div className={css.groupRatingAndLocation}>
-          <div className={css.groupRating}>
-            <svg width={16} height={16} fill="#ffc531">
-              <use href={`${icons}#icon-rating`}></use>
-            </svg>
-            <p
-              className={css.rating}
-            >{`${rating}(${reviews.length} reviews) `}</p>
-          </div>
-          <div className={css.groupLocation}>
-            <svg width={16} height={16} fill="#101828">
-              <use href={`${icons}#icon-map`}></use>
-            </svg>
-            <p className={css.rating}>
-              {location.split(",").reverse().join(", ")}
-            </p>
-          </div>
-        </div>
+        <RatingAndLocation
+          rating={rating}
+          reviews={reviews}
+          location={location}
+        />
         <p className={css.description}>{description}</p>
         <ul className={css.equipment}>
           <EquipmentItem str={transmission} />

@@ -1,0 +1,28 @@
+.camperDetails {
+  margin-bottom: 60px;
+}
+.name {
+  line-height: 32px;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.price {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 28px;
+}
+.images {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.image {
+  width: 292px;
+  height: 312px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.description {
+  color: var(--dark-grey);
+}
