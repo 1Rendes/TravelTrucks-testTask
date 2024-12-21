@@ -2,7 +2,7 @@
 
 Booking campers application. Test task for GO-IT.
 
-to run live page at localhost use:
+to run developer server at localhost use:
 
 1.  "npm install";
 2.  "npm run dev";
@@ -17,5 +17,8 @@ You can get more offers with "Load more" button.
 You can add camper to favorite, it's also saves to local storage.
 You can on camper page open photo in modal.
 You can check the user-data that will be sended to backend in console of your browser ("camperId" add automaticaly).
+
+- not found page added
+- loader added
 
 author: 1Rendes (https://github.com/1Rendes)

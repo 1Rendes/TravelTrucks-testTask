@@ -4,6 +4,7 @@
 .navigation {
   max-width: 1440px;
   margin: 0 auto;
+  justify-content: end;
   position: relative;
   display: flex;
 }
@@ -14,8 +15,21 @@
 }
 .menu {
   margin: auto;
-  display: flex;
+  display: none;
   gap: 32px;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+.mobileMenuButton {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding-right: 30px;
+  background-color: transparent;
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 .menuButton {
   height: 72px;

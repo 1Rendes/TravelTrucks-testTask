@@ -4,9 +4,14 @@ import VehicleEquipmentFilter from "../VehicleEquipmentFilter/VehicleEquipmentFi
 import VehicleTypeFilter from "../VehicleTypeFilter/VehicleTypeFilter";
 import { setFilters } from "../../redux/filters/slice";
 import { selectFilters } from "../../redux/filters/selectors";
+import icons from "../../img/icons.svg";
+import css from "./Filters.module.css";
+import { useState } from "react";
+import clsx from "clsx";
 
 const Filters = () => {
   const dispatch = useDispatch();
+  const [filtersIsOpen, setFiltersIsOpen] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     const formElements = e.target.elements;
@@ -27,24 +32,46 @@ const Filters = () => {
     integrated: false,
     alcove: false,
   };
+
   defaultVehicleTypeFilterState[filters.form] = true;
+
+  const handleToggleFiltersMenu = () => {
+    if (filtersIsOpen === true) {
+      setFiltersIsOpen(false);
+      return;
+    }
+    setFiltersIsOpen(true);
+    return;
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <LocationInput state={filters.location} />
-      <VehicleEquipmentFilter
-        inputName={"equipmentFilter"}
-        type={"checkbox"}
-        filtersDefaultValue={filters}
-      />
-      <VehicleTypeFilter
-        inputName={"VehicleTypeFilter"}
-        type={"radio"}
-        filtersDefaultValue={defaultVehicleTypeFilterState}
-      />
-      <button className="button" type="submit">
-        Search
+    <div className={clsx(css.groupFilters, filtersIsOpen && css.open)}>
+      <form onSubmit={handleSubmit}>
+        <LocationInput state={filters.location} />
+        <VehicleEquipmentFilter
+          inputName={"equipmentFilter"}
+          type={"checkbox"}
+          filtersDefaultValue={filters}
+        />
+        <VehicleTypeFilter
+          inputName={"VehicleTypeFilter"}
+          type={"radio"}
+          filtersDefaultValue={defaultVehicleTypeFilterState}
+        />
+        <button className="button" type="submit">
+          Search
+        </button>
+      </form>
+      <button
+        type="button"
+        onClick={handleToggleFiltersMenu}
+        className={css.filtersMenu}
+      >
+        <svg width={20} height={20}>
+          <use href={`${icons}#icon-filter`}></use>
+        </svg>
       </button>
-    </form>
+    </div>
   );
 };
 

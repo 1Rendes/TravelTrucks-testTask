@@ -1,0 +1,36 @@
+.groupFilters {
+  border-right: 1px solid var(--grey);
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: -321px;
+  height: 100%;
+  transition: left 250ms ease-in-out;
+  background-color: white;
+  z-index: 1;
+  width: 320px;
+  @media (min-width: 1440px) {
+    width: auto;
+    position: static;
+    padding: 0;
+    border-right: none;
+  }
+}
+.filtersMenu {
+  display: flex;
+  justify-content: end;
+  width: 50px;
+  padding: 12px 4px 12px 0;
+  border: 1px solid var(--grey);
+  border-radius: 10px;
+  position: absolute;
+  top: 80px;
+  left: 300px;
+  background-color: white;
+  @media (min-width: 1440px) {
+    display: none;
+  }
+}
+.open {
+  left: 0;
+}
