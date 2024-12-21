@@ -7,6 +7,14 @@ div.flatpickr-calendar {
 div.flatpickr-months {
   padding: 12px;
 }
+div.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month {
+  top: 12px;
+  left: 12px;
+}
+div.flatpickr-months .flatpickr-next-month.flatpickr-next-month {
+  top: 12px;
+  right: 12px;
+}
 div.flatpickr-weekdays {
   padding: 0 12px 12px;
 }
