@@ -3,6 +3,7 @@ import { Layout } from "./components/Layout/Layout.jsx";
 import { lazy } from "react";
 import "./styles/common.css";
 import { Toaster } from "react-hot-toast";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 const HomePage = lazy(() => import("./pages/HomePage.jsx"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage.jsx"));
@@ -13,9 +14,10 @@ const App = () => {
     <>
       <Layout>
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/catalog" element={<CatalogPage />}></Route>
-          <Route path="/catalog/:id" element={<CamperPage />}></Route>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/catalog/:id" element={<CamperPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
       <Toaster
