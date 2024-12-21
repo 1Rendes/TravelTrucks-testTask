@@ -1,4 +1,5 @@
 @import url(./reset.css);
+@import url(./calendarStyles.css);
 
 :root {
   --black: #101828;
