@@ -23,7 +23,9 @@ const CampersList = ({ handleLoadMore }) => {
     dispatch(setFavoriteCampers(id));
   };
 
-  const renderLoadMore = campers.length < totalCampers;
+  const renderLoadMore =
+    campers.length < totalCampers && campers.length > 0 && !loading;
+
   return (
     campers && (
       <div className={css.groupCamperListAndLoadMore}>
@@ -39,9 +41,7 @@ const CampersList = ({ handleLoadMore }) => {
           ))}
         </ul>
         {loading && <Loader />}
-        {renderLoadMore && !loading && (
-          <LoadMore handleLoadMore={handleLoadMore} />
-        )}
+        {renderLoadMore && <LoadMore handleLoadMore={handleLoadMore} />}
       </div>
     )
   );

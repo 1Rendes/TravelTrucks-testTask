@@ -4,6 +4,7 @@ import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/flatpickr.css";
 import css from "./BookingForm.module.css";
 import { useParams } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const bookingSchema = Yup.object().shape({
   name: Yup.string()
@@ -31,6 +32,7 @@ const BookingForm = () => {
   const handleSubmit = (values) => {
     values.camperId = id;
     console.log(values);
+    toast.success("Your booking sucessfully sended!");
   };
 
   return (

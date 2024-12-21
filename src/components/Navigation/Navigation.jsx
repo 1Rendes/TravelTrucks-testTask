@@ -9,19 +9,21 @@ export const Navigation = () => {
   };
 
   return (
-    <div className={css.navigation}>
-      <Link to="/">
-        <svg className={css.logo} width={136} height={15}>
-          <use href={`${icons}#icon-logo`}></use>
-        </svg>
-      </Link>
-      <div className={css.menu}>
-        <NavLink className={buildLinkClass} to="/">
-          HomePage
-        </NavLink>
-        <NavLink className={buildLinkClass} to="/catalog" end>
-          Catalog
-        </NavLink>
+    <div className={css.navigationLayout}>
+      <div className={css.navigation}>
+        <Link to="/">
+          <svg className={css.logo} width={136} height={15}>
+            <use href={`${icons}#icon-logo`}></use>
+          </svg>
+        </Link>
+        <div className={css.menu}>
+          <NavLink className={buildLinkClass} to="/">
+            HomePage
+          </NavLink>
+          <NavLink className={buildLinkClass} to="/catalog" end>
+            Catalog
+          </NavLink>
+        </div>
       </div>
     </div>
   );
