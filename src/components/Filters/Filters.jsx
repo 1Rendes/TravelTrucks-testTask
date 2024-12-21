@@ -14,6 +14,7 @@ const Filters = () => {
   const [filtersIsOpen, setFiltersIsOpen] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFiltersIsOpen(false);
     const formElements = e.target.elements;
     const formData = {};
     if (formElements[0].value) formData.location = formElements[0].value;

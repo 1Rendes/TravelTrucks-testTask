@@ -3,6 +3,7 @@ import icons from "../../img/icons.svg";
 import css from "./CamperCard.module.css";
 import EquipmentItem from "../EquipmentItem/EquipmentItem";
 import RatingAndLocation from "../RatingAndLocation/RatingAndLocation";
+import clsx from "clsx";
 
 const CamperCard = ({ camperData, handleSetFavorite, favoriteCampers }) => {
   const {
@@ -36,11 +37,7 @@ const CamperCard = ({ camperData, handleSetFavorite, favoriteCampers }) => {
                 handleSetFavorite(id);
               }}
             >
-              <svg
-                className={isFavorite ? css.isFavorite : ""}
-                width={26}
-                height={24}
-              >
+              <svg className={clsx(isFavorite && css.isFavorite, css.favorite)}>
                 <use href={`${icons}#icon-favorite`}></use>
               </svg>
             </button>

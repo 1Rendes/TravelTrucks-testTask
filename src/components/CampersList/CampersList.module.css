@@ -3,13 +3,31 @@
 }
 .listItem {
   display: flex;
-  gap: 24px;
-  width: 888px;
-  height: 368px;
-  padding: 24px;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 375px;
+  height: auto;
+  padding: 10px;
   border-radius: 20px;
   border: 1px solid var(--light-grey);
-  margin-bottom: 32px;
+  margin-bottom: 16px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    max-width: 100%;
+    gap: 12px;
+    width: 768px;
+    height: 368px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  @media (min-width: 1440px) {
+    gap: 24px;
+    width: 888px;
+    height: 368px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
 }
 .groupCamperListAndLoadMore {
   display: flex;
