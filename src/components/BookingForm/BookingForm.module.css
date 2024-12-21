@@ -1,0 +1,56 @@
+.formContainer {
+  border: 1px solid var(--light-grey);
+  border-radius: 10px;
+  width: calc(50% - 40px);
+  padding: 44px 57px;
+}
+.header {
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--black);
+}
+.description {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 24px;
+  font-weight: 400;
+  color: var(--grey);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+.groupFieldAndError {
+  position: relative;
+}
+.field {
+  background-color: var(--grey-forms);
+  border: transparent;
+  border-radius: 12px;
+  height: 60px;
+  padding: 18px;
+  width: 100%;
+}
+.comment {
+  font-family: inherit;
+  height: 120px;
+  resize: none;
+  outline: none;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.error {
+  color: var(--red);
+  position: absolute;
+  font-size: 12px;
+  top: 59px;
+  left: 8px;
+}
+.submit {
+  margin: 10px auto 0;
+}

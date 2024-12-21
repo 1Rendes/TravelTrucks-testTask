@@ -60,7 +60,7 @@ const CamperCard = ({ camperData, handleSetFavorite, favoriteCampers }) => {
           {TV && <EquipmentItem str={"TV"} />}
           {bathroom && <EquipmentItem str={"bathroom"} />}
         </ul>
-        <Link className="button" to={`/catalog/${id}`}>
+        <Link target="blank" className="button" to={`/catalog/${id}`}>
           Show more
         </Link>
       </div>
